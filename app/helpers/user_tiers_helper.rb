@@ -1,0 +1,2 @@
+module UserTiersHelper
+end

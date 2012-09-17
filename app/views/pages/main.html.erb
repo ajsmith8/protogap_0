@@ -1,0 +1,41 @@
+<div class = "header container" id = "header"></div>
+<div class = "page">
+	<div class = "column left">
+		<div class = "column container" style = "border: 1px solid">
+			<div id = "left_top" class = "column left side top"></div>
+			<div id = "left_bottom" class = "column left side bottom"></div>
+		</div>
+	</div>
+	<div id = "right" class = "column right" style = "border: 1px solid"></div>
+</div>
+
+<script type = 'text/json' id = 'json'>
+	{
+		"current_user_id": <%= current_user.id.to_json %>,
+		"users": <%= User.all.to_json %>,
+		"topics": <%= Topic.all.to_json %>,
+		"facts": <%= Fact.all.to_json %>,
+		"tasks": <%= Task.all.to_json %>,
+		"scores": <%= Score.all.to_json %>,
+		"levels" : <%= Level.all.to_json %>,
+		"tiers" : <%= Tier.all.to_json %>,
+		"user_tiers" : <%= UserTier.all.to_json %>,
+		"edits" : <%= Edit.all.to_json %>,
+		"comments" : <%= Comment.all.to_json %>,
+		"sources" : <%= Source.all.to_json %>,
+		"votes" : <%= Vote.all.to_json %>
+	}
+</script>
+
+<%= content_for :javascript do -%>
+	<script type = 'text/javascript'>
+		$(function() {
+			var div, data;
+			div = $('<div></div>');
+			div.html($('#json').text());
+			data = JSON.parse(div.text());
+		
+			Protogap0.init(data);
+		});
+	</script>
+<% end %>

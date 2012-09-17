@@ -1,0 +1,9 @@
+@import "compass";
+@import "sheet/vars";
+@import "sheet/mixins";
+@import "sheet/layout";
+@import "sheet/header";
+
+.border {
+	border: 1px solid;
+} 

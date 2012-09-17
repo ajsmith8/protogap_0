@@ -1,0 +1,60 @@
+html {
+	height: 100%;
+	@include fonts;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: lighten(desaturate($backgroundcolor, 25%), 5%);
+}
+
+.page {
+	width: 900px;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	background: rgba(#fff, 0.5);
+}
+
+.column {
+	position: absolute;
+	top: 110px;
+	margin: 0;
+	padding: 0;
+	
+	&.left {
+		width: 322px;
+		left: 15px;
+		
+		&.side {
+			top: 0;
+			left: 0;
+			position: relative;
+			margin: 0 auto;
+			padding: 0;
+			
+			&.top {
+				height: 110px;
+				margin-bottom: 12px;
+				border: 1px solid;
+			}
+
+			&.bottom {
+				
+			}
+		}
+	}
+	
+	&.right {
+		width: 534px;
+		right: 15px;
+	}
+
+	&.container {
+		position: fixed;
+		width: 322px;
+		height: 100%;		
+	}
+}

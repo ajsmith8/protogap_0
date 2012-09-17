@@ -1,0 +1,36 @@
+.header {
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	
+	&.container {
+		height: 100px;
+		background: lighten(desaturate($backgroundcolor, 25%), 5%);
+	}
+	
+	&.navbar {
+		height: 40px;
+		background: #303030;
+		top: 60px;
+		@include linear-gradient(#484848, #181818);
+		@include text-shadow(0, 0, 0, #d8d8d8);
+		@include box-shadow(1px, 1px, 5px, 0, #888);
+	}
+	
+	&.logo {
+		width: 225px;
+		position: absolute; 
+		top: 4px; 
+		left: 5px; 
+		cursor: pointer;
+	}
+}
+
+.logo-text {
+	position: absolute; 
+	top: 4px; left: 
+	60px; 
+	font-size: 40px; 
+	color: #323232;
+	font-weight: bold;
+}
