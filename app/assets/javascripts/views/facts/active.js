@@ -3,7 +3,8 @@ Protogap0.Views.FactsActive = Backbone.View.extend({
 	template: JST['facts/active'],
 	
 	events: {
-		
+		'click .editfact' : 'editsCreate',
+		'click #comment_number' : 'commentsIndex'
 	},
 	
 	initialize: function(options) {
@@ -46,5 +47,27 @@ Protogap0.Views.FactsActive = Backbone.View.extend({
 			fact: this.fact
 		});
 		$(this.el).find('#sources').html(view.render().el);
+	},
+	
+	editsCreate: function(event) {
+		var element = $(event.target).closest('.factpanel');
+		var view = new Protogap0.Views.EditsCreate({
+			attr: this.attr,
+			fact: this.attr.facts.where({id: parseInt($(element).attr('id'))})[0]
+		});
+		$(element).children().remove();
+		$(element).addClass('edit');
+		$(element).html(view.render().el);
+	},
+	
+	commentsIndex: function(event) {
+		var element = $(event.target).closest('.factpanel');
+		var view = new Protogap0.Views.CommentsIndex({
+			attr: this.attr,
+			fact: this.attr.facts.where({id: parseInt($(element).attr('id'))})[0]
+		});
+		$(element).children().remove();
+		$(element).addClass('comment');
+		$(element).html(view.render().el);
 	}
 });

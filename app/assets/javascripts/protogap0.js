@@ -5,7 +5,7 @@ window.Protogap0 = {
 	Routers: {},
 	
 	init: function(data) {
-		this.user_id = data.current_user_id;
+		this.current_user = new Protogap0.Models.User(data.current_user);
 		this.users = new Protogap0.Collections.Users(data.users);
 		this.topics = new Protogap0.Collections.Topics(data.topics);
 		this.facts = new Protogap0.Collections.Facts(data.facts);
@@ -20,7 +20,7 @@ window.Protogap0 = {
 		this.scores = new Protogap0.Collections.Scores(data.scores);
 
 		new Protogap0.Routers.Router({
-			user_id: this.user_id,
+			current_user: this.current_user,
 			users: this.users,
 			topics: this.topics,
 			facts: this.facts,

@@ -1,0 +1,39 @@
+<form id = "edit_fact">
+	<label>Title:</label></br>
+	<textarea id = "title"><%= fact.get('title') %></textarea></br>
+	<label>Description:</label></br>
+	<textarea rows = "4" id = "description"><%= fact.get('description') %></textarea></br>
+	
+	<% for (i = 0; i < sources.length; i++) { %>
+		<label>Source <%= i + 1 %>:</label>
+		<input type = "text" id = "<%= sources[i].get('id') %>" class = "editsource" value = "<%= sources[i].get('url') %>"></br>
+	<% } %></br>
+	
+	<label>Question:</label></br>
+	<textarea id = "question"><%= fact.get('question') %></textarea></br>
+	<label>Correct:</label>
+	<input type = "text" id = "correct" value = "<%= fact.get('correct') %>" /></br>
+	<label>Wrong 1:</label>
+	<input type = "text" id = "wrong1" value = "<%= fact.get('wrong1') %>"></br>
+	<label>Wrong 2:</label>
+	<input type = "text" id = "wrong2" value = "<%= fact.get('wrong2') %>"></br>
+	<label>Wrong 3:</label>
+	<input type = "text" id = "wrong3" value = "<%= fact.get('wrong3') %>"></br></br>
+	
+	<% if (fact.get('category') === 'intro') { %>
+		<input type = "radio" name = "category" id = "intro" checked = "yes" />Intro</br>
+		<input type = "radio" name = "category" id = "pro" />Pro</br>
+		<input type = "radio" name = "category" id = "con" />Con</br>
+	<% } else if (fact.get('category') === 'pro') { %>
+		<input type = "radio" name = "category" id = "intro" />Intro</br>
+		<input type = "radio" name = "category" id = "pro" checked = "yes" />Pro</br>
+		<input type = "radio" name = "category" id = "con" />Con</br>
+	<% } else { %>
+		<input type = "radio" name = "category" id = "intro" />Intro</br>
+		<input type = "radio" name = "category" id = "pro" />Pro</br>
+		<input type = "radio" name = "category" id = "con" checked = "yes" />Con</br>
+	<% } %>
+	<input type = "submit" id = "submit" value = "Update Fact" />
+</form>
+<button id = "cancel">Cancel</button>
+<button id = "history">History</button>

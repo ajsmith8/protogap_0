@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120913165035) do
+ActiveRecord::Schema.define(:version => 20120918210733) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20120913165035) do
     t.text     "title"
     t.text     "description"
     t.text     "image"
-    t.string   "type"
+    t.string   "category"
     t.text     "urls"
     t.boolean  "has_quiz"
     t.text     "question"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20120913165035) do
     t.boolean  "is_approved"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.integer  "edit_id"
   end
 
   create_table "levels", :force => true do |t|
@@ -119,7 +120,6 @@ ActiveRecord::Schema.define(:version => 20120913165035) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.string   "email"
     t.string   "provider"
     t.string   "uid"
     t.string   "token"

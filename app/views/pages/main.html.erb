@@ -11,7 +11,7 @@
 
 <script type = 'text/json' id = 'json'>
 	{
-		"current_user_id": <%= current_user.id.to_json %>,
+		"current_user": <%= current_user.to_json %>,
 		"users": <%= User.all.to_json %>,
 		"topics": <%= Topic.all.to_json %>,
 		"facts": <%= Fact.all.to_json %>,

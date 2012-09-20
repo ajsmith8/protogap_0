@@ -1,0 +1,8 @@
+<% if (fact.get('edit_id') === edit.get('id')) { %>
+	<div>&#x2713;</div>
+<% } else { %>
+	<% if (is_active) { %>
+		<button id = "revertedit">Revert</button>
+	<% } %>
+<% } %>
+

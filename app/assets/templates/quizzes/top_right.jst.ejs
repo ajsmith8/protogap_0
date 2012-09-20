@@ -1,0 +1,9 @@
+<% if (task) { %>
+	<% if (task.get('answer') === 'correct') { %>
+		<div>&#x2713;</div>
+	<% } else { %>
+		<div>&#x2717;</div>
+	<% } %>
+<% } else { %>
+	<div>?</div>
+<% } %>

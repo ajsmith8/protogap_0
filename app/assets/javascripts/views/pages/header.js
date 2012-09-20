@@ -14,6 +14,6 @@ Protogap0.Views.PagesHeader = Backbone.View.extend({
 	},
 	
 	pagesHome: function() {
-		alert("you are already at home!");
+		Backbone.history.navigate('', true);
 	}
 });

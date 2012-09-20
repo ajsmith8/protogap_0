@@ -24,7 +24,7 @@ Protogap0.Routers.Router = Backbone.Router.extend({
 		this.user_tiers = options.user_tiers;
 		this.comments = options.comments;
 		this.scores = options.scores;
-		this.current_user = this.users.where({id: options.user_id})[0];
+		this.current_user = options.current_user;
 
 		this.attr = {
 			current_user: this.current_user,
@@ -89,7 +89,8 @@ Protogap0.Routers.Router = Backbone.Router.extend({
 	factsIndex: function(id) {
 		var view = new Protogap0.Views.FactsIndex({
 			attr: this.attr,
-			facts: this.facts.where({topic_id: parseInt(id), is_approved: true})
+			topic: this.topics.where({id: parseInt(id)})[0],
+			category: 'all'
 		});
 		$('#right').html(view.render().el);
 	},
@@ -97,7 +98,8 @@ Protogap0.Routers.Router = Backbone.Router.extend({
 	factsIntro: function(id) {
 		var view = new Protogap0.Views.FactsIndex({
 			attr: this.attr,
-			facts: this.facts.where({topic_id: parseInt(id), category: 'intro', is_approved: true})
+			topic: this.topics.where({id: parseInt(id)})[0],
+			category: 'intro'
 		});
 		$('#right').html(view.render().el);
 	},
@@ -105,7 +107,8 @@ Protogap0.Routers.Router = Backbone.Router.extend({
 	factsPros: function(id) {
 		var view = new Protogap0.Views.FactsIndex({
 			attr: this.attr,
-			facts: this.facts.where({topic_id: parseInt(id), category: 'pro', is_approved: true})
+			topic: this.topics.where({id: parseInt(id)})[0],
+			category: 'pro'
 		});
 		$('#right').html(view.render().el);
 	},
@@ -113,12 +116,17 @@ Protogap0.Routers.Router = Backbone.Router.extend({
 	factsCons: function(id) {
 		var view = new Protogap0.Views.FactsIndex({
 			attr: this.attr,
-			facts: this.facts.where({topic_id: parseInt(id), category: 'con', is_approved: true})
+			topic: this.topics.where({id: parseInt(id)})[0],
+			category: 'con'
 		});
 		$('#right').html(view.render().el);
 	},
 	
 	factsQuiz: function(id) {
-		
+		var view = new Protogap0.Views.QuizzesIndex({
+			attr: this.attr,
+			facts: this.facts.where({topic_id: parseInt(id), has_quiz: true, is_approved: true})
+		});
+		$('#right').html(view.render().el);
 	}
 });

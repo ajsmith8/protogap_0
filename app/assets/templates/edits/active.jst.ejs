@@ -1,0 +1,16 @@
+Active Edit</br>
+<%= edit.get('title') %></br>
+<%= edit.get('description') %></br>
+<%= edit.get('category') %></br>
+<% if (edit.get('has_quiz')) { %>
+	<%= edit.get('question') %></br>
+	<%= edit.get('correct') %></br>
+	<%= edit.get('wrong1') %></br>
+	<% if (edit.get('wrong2') && edit.get('wrong2') !== "") { %>
+		<%= edit.get('wrong2') %></br>
+	<% } %>
+	<% if (edit.get('wrong3') && edit.get('wrong3') !== "") { %>
+		<%= edit.get('wrong3') %></br>
+	<% } %>
+<% } %></br>
+<div id = "revert" />
