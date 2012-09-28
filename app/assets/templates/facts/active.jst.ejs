@@ -1,9 +1,27 @@
-Active</br>
-<%= fact.get('title') %></br>
-<% if (fact.get('description')) { %>
-	<%= fact.get('description') %></br>
-<% } %></br>
-<div id = "sources" /></br>
-<div id = "comments_number" /></br>
-<div id = "votes_number" /></br>
-<div id = "<%= fact.get('id') %>" class = "editfact">Edit</div>
+<div class = "active thumbnail container">	
+	<div class = "active thumbnail">
+		<% if (fact.get('image')) { %>
+			<img src = "<%= fact.get('image') %>" width = "50" />
+		<% } else { %>
+			<img src = "assets/fusegap.png" width = "50" />
+		<% } %>
+	</div>
+</div>
+<div class = "active title container">
+	<div class = "active title">
+		<%= fact.get('title') %>
+	</div>
+</div>
+<div class = "active description"><%= fact.get('description') %></div>
+<div id = "sources" class = "active sources" />
+<div class = "active footer">
+	<div class = "active comments container">
+		<div id = "comments_number" class = "active comments" />
+	</div>
+	<div class = "active votes container">
+		<div id = "votes_number" class = "active votes" />
+	</div>
+	<div class = "active edits container">
+		<div id = "<%= fact.get('id') %>" class = "editfact">Edit</div>
+	</div>
+</div>

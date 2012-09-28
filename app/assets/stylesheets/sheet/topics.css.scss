@@ -1,0 +1,84 @@
+.topic {
+	
+	.active {
+		&.title {
+			width: 100%;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 18px;
+			text-align: center;
+
+			&.container {
+				position: absolute;
+				top: 10px;
+				left: 15%;
+				width: 70%;
+			}
+		}
+		
+		&.sidebar {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 20px;
+			height: 100px;
+			background: #303030;
+			border-left: 1px solid #dfdfdf;
+			@include border-right-radius(4px);
+		}
+		
+		&.arrow {
+			position: absolute;
+			top: 43px;
+			left: 5px;
+			width: 0; 
+			height: 0; 
+			border-color: transparent transparent transparent #57BBD6;
+			border-style: solid;
+			border-width: 5px 0 5px 10px;
+		}
+	}
+	
+	.inactive {
+		
+		&.title {
+			width: 100%;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 18px;
+			text-align: center;
+			
+			&.container {
+				position: absolute;
+				top: 10px;
+				left: 15%;
+				width: 70%;
+			}
+		}
+		
+		&.facts {
+			color: #999999;
+			font-size: 11px;
+			
+			&.container {
+				position: absolute;
+				bottom: 5px;
+				left: 5px;
+			}
+		}
+		
+		&.more {
+			text-align: center;
+			font-size: 13px;
+			color: #BDBDBD;
+			letter-spacing: 1px;
+			
+			&.container {
+				width: 50%;
+				position: absolute;
+				bottom: 10px;
+				left: 25%;
+			}
+		}
+	}
+}

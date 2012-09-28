@@ -1,2 +1,5 @@
-inactive votes:
-<%= score %>
+<% if (score >= 0) { %>
+	+ <%= score %>
+<% } else { %>
+	- <%= score %>
+<% } %>

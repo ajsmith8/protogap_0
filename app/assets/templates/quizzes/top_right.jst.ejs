@@ -1,9 +1,9 @@
 <% if (task) { %>
 	<% if (task.get('answer') === 'correct') { %>
-		<div>&#x2713;</div>
+		<div class = "symbol checkmark">&#x2713;</div>
 	<% } else { %>
-		<div>&#x2717;</div>
+		<div class = "symbol x">&#x2717;</div>
 	<% } %>
 <% } else { %>
-	<div>?</div>
+	<div class = "symbol questionmark">?</div>
 <% } %>

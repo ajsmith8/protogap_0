@@ -1,6 +1,7 @@
 html {
 	height: 100%;
 	@include fonts;
+	color: #333333;
 }
 
 body {
@@ -16,6 +17,13 @@ body {
 	position: relative;
 	margin: 0 auto;
 	background: rgba(#fff, 0.5);
+}
+
+.home {
+	width: 100%;
+	position: absolute;
+	top: 110px;
+	left: 0;
 }
 
 .column {

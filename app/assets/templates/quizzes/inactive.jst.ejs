@@ -1,2 +1,20 @@
-<%= quiz.get('question') %></br>
-<div id = "top_right_symbol" />
+<div class = "inactive thumbnail container">	
+	<div class = "inactive thumbnail">
+		<% if (quiz.get('image')) { %>
+			<img src = "<%= quiz.get('image') %>" width = "50" />
+		<% } else { %>
+			<img src = "assets/fusegap.png" width = "50" />
+		<% } %>
+	</div>
+</div>
+<div class = "inactive question container">
+	<div class = "inactive question">
+		<b><%= quiz.get('question').split(' ')[0] %></b><%= " " + quiz.get('question').substr(quiz.get('question').indexOf(" ") + 1) %>
+	</div>
+</div>
+<div class = "inactive more">
+	answer question ...
+</div>
+<div class = "inactive answered container">
+	<div id = "top_right_symbol" class = "inactive answered" />
+</div>

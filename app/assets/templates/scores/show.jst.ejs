@@ -1,0 +1,11 @@
+<% if (user_score && user_score.get('value') === 1) { %>
+	<button id = "upvote" disabled>+</button>
+<% } else { %>	
+	<button id = "upvote">+</button>
+<% } %>
+<%= score %>
+<% if (user_score && user_score.get('value') === -1) { %>
+	<button id = "downvote" disabled>-</button>
+<% } else { %>	
+	<button id = "downvote">-</button>
+<% } %>

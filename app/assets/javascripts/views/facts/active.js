@@ -4,7 +4,7 @@ Protogap0.Views.FactsActive = Backbone.View.extend({
 	
 	events: {
 		'click .editfact' : 'editsCreate',
-		'click #comment_number' : 'commentsIndex'
+		'click #comments_number' : 'commentsIndex'
 	},
 	
 	initialize: function(options) {
@@ -50,7 +50,7 @@ Protogap0.Views.FactsActive = Backbone.View.extend({
 	},
 	
 	editsCreate: function(event) {
-		var element = $(event.target).closest('.factpanel');
+		var element = $(event.target).closest('.fact');
 		var view = new Protogap0.Views.EditsCreate({
 			attr: this.attr,
 			fact: this.attr.facts.where({id: parseInt($(element).attr('id'))})[0]
@@ -61,7 +61,7 @@ Protogap0.Views.FactsActive = Backbone.View.extend({
 	},
 	
 	commentsIndex: function(event) {
-		var element = $(event.target).closest('.factpanel');
+		var element = $(event.target).closest('.fact');
 		var view = new Protogap0.Views.CommentsIndex({
 			attr: this.attr,
 			fact: this.attr.facts.where({id: parseInt($(element).attr('id'))})[0]

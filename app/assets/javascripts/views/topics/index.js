@@ -3,7 +3,7 @@ Protogap0.Views.TopicsIndex = Backbone.View.extend({
 	id: 'topics',
 	
 	events: {
-		'click .topicpanel' : 'activateTopic'
+		'click .topic' : 'activateTopic'
 	},
 	
 	initialize: function(options) {
@@ -33,8 +33,9 @@ Protogap0.Views.TopicsIndex = Backbone.View.extend({
 	activateTopic: function(event) {
 		var elements, element;
 		
-		element = $(event.target).closest('.topicpanel');
-		elements = $('.topicpanel').get();
+		element = $(event.target).closest('.topic');
+		elements = $('.topic').get();
+		$('#topics').children().removeClass('above below');
 		for (i = 0; i < elements.length; i++) {
 			if ($(elements[i]).hasClass('active')) {
 				this.renderInactive(elements[i]);
@@ -52,6 +53,8 @@ Protogap0.Views.TopicsIndex = Backbone.View.extend({
 		
 		$(element).children().remove();
 		$(element).addClass('active');
+		$(element).prev().addClass('above');
+		$(element).next().addClass('below');
 		$(element).html(view.render().el);
 		
 		Backbone.history.navigate('facts' + topic_id + '/intro', true);

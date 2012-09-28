@@ -1,0 +1,93 @@
+.quiz {
+	.active {
+	
+		&.question {
+			width: 100%;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 18px;
+			
+			&.container {
+				margin: 30px 0 0 15%;
+				width: 70%;
+				min-height: 59px;
+			}
+		}
+	}
+
+	.inactive {
+	
+		&.question {
+			height: 20px;
+			width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			font-size: 14px;
+		
+			&.container {
+				position: absolute;
+				top: 35px;
+				left: 15%;
+				width: 70%;	
+			}
+		}
+	
+		&.thumbnail {
+			position: absolute;
+			top: 20px;
+			left: 12px;
+		
+			&.container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 14%;
+				height: 100%;
+				border-right: 1px solid #f2f2f2;	
+			}
+		}
+	
+		&.answered {
+			position: absolute;
+			top: 10px;
+			right: 18px;
+			color: #999999;
+			font-size: 11px;
+		
+			&.container {
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 50%;
+				width: 15%;
+			}
+		}
+	
+		&.more {
+			position: absolute;
+			bottom: 10px;
+			left: 40%;
+			width: 100px;
+			text-align: center;
+			font-size: 11px;
+			color: #BDBDBD;
+		}
+	}
+}
+
+.symbol {
+	font-size: 24px;
+	
+	&.checkmark {
+		color: #00cc00;
+	}
+	
+	&.x {
+		color: #ff4747;
+	}
+	
+	&.questionmark {
+		color: #007ccf;
+	}
+}

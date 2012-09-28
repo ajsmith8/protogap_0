@@ -1,0 +1,172 @@
+.panel {
+	width: 100%;
+	position: relative;
+	cursor: pointer;
+
+	&.topic {
+		background: #fff;
+		border-left: 1px solid #9ca5bf;
+		border-right: 1px solid #9ca5bf;
+		border-bottom: 1px solid #dfdfdf;
+		height: 55px;
+		
+		&:hover {
+			background: mix(#fff, #57BBD6, 95%);
+		}
+
+		&.active {
+			cursor: default;
+			border: 1px solid #9ca5bf;
+			@include border-radius(5px);
+			margin: 10px 0 10px 0;
+			height: 100px;
+			overflow: hidden;
+			
+			&:hover {
+				background: #fff;
+			}
+		}
+		
+		.sidebar {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 20px;
+			height: 55px;
+			background: #303030;
+			border-left: 1px solid #dfdfdf;
+		}
+		
+		&.top {
+			@include border-top-radius(5px);
+			border-top: 1px solid #9ca5bf;
+			margin-top: 0;
+			
+			.sidebar {
+				@include border-corner-radius(top, right, 4px);
+			}
+		}
+
+		&.bottom {
+			@include border-bottom-radius(5px);
+			border-bottom: 1px solid #9ca5bf;
+			margin: 0 0 10px 0;
+			
+			.sidebar {
+				@include border-corner-radius(bottom, right, 4px);
+			}
+		}
+
+		&.above {
+			@include border-bottom-radius(5px);
+			border-bottom: 1px solid #9ca5bf;
+			
+			.sidebar {
+				@include border-corner-radius(bottom, right, 4px);
+			}
+		}
+
+		&.below {
+			@include border-top-radius(5px);
+			border-top: 1px solid #9ca5bf;
+			
+			.sidebar {
+				@include border-corner-radius(top, right, 4px);
+			}
+		}
+	}
+	
+	&.fact {
+		background: #fff;
+		border-left: 1px solid #9ca5bf;
+		border-right: 1px solid #9ca5bf;
+		border-bottom: 1px solid #dfdfdf;
+		height: 90px;
+		
+		&:hover {
+			background: mix(#fff, #57BBD6, 95%);
+		}
+		
+		&.active {
+			cursor: default;
+			border: 1px solid #9ca5bf;
+			@include border-radius(5px);
+			margin: 10px 0 10px 0;
+			height: auto;
+			
+			&:hover {
+				background: #fff;
+			}
+		}
+		
+		&.top {
+			@include border-top-radius(5px);
+			border-top: 1px solid #9ca5bf;
+			margin-top: 0;
+		}
+		
+		&.bottom {
+			@include border-bottom-radius(5px);
+			border-bottom: 1px solid #9ca5bf;
+		}
+		
+		&.above {
+			@include border-bottom-radius(5px);
+			border-bottom: 1px solid #9ca5bf;
+		}
+		
+		&.below {
+			@include border-top-radius(5px);
+			border-top: 1px solid #9ca5bf;
+		}
+	}
+	
+	&.quiz {
+		background: #fff;
+		border-left: 1px solid #9ca5bf;
+		border-right: 1px solid #9ca5bf;
+		border-bottom: 1px solid #dfdfdf;
+		height: 90px;
+		
+		&:hover {
+			background: mix(#fff, #57BBD6, 95%);
+		}
+		
+		&.active {
+			cursor: default;
+			border: 1px solid #9ca5bf;
+			@include border-radius(5px);
+			margin: 10px 0 10px 0;
+			height: auto;
+			
+			&:hover {
+				background: #fff;
+			}
+		}
+		
+		&.top {
+			@include border-top-radius(5px);
+			border-top: 1px solid #9ca5bf;
+			margin-top: 0;
+		}
+		
+		&.bottom {
+			@include border-bottom-radius(5px);
+			border-bottom: 1px solid #9ca5bf;
+		}
+		
+		&.above {
+			@include border-bottom-radius(5px);
+			border-bottom: 1px solid #9ca5bf;
+		}
+		
+		&.below {
+			@include border-top-radius(5px);
+			border-top: 1px solid #9ca5bf;
+		}
+	}
+	
+	&.profile {
+		
+	}
+}

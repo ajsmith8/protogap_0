@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120918210733) do
+ActiveRecord::Schema.define(:version => 20120921171622) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
     t.integer  "fact_id"
-    t.text     "comment"
+    t.text     "content"
     t.integer  "score",      :default => 0
     t.string   "ancestry"
     t.datetime "created_at",                :null => false
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(:version => 20120918210733) do
   create_table "scores", :force => true do |t|
     t.integer  "comment_id"
     t.integer  "user_id"
-    t.integer  "score"
+    t.integer  "value"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

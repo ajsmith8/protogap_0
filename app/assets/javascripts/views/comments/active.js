@@ -2,10 +2,6 @@ Protogap0.Views.CommentsActive = Backbone.View.extend({
 	
 	template: JST['comments/active'],
 	
-	events: {
-		'click #comments' : 'commentsIndex'
-	},
-	
 	initialize: function(options) {
 		this.attr = options.attr;
 		this.comments = this.attr.comments.where({fact_id: options.fact.get('id')});
@@ -14,13 +10,10 @@ Protogap0.Views.CommentsActive = Backbone.View.extend({
 	},
 	
 	render: function() {
+		$(this.el).addClass('commenting');
 		$(this.el).html(this.template({
 			comments: this.comments
 		}));
 		return this;
-	},
-	
-	commentsIndex: function(event) {
-		
 	}
 });

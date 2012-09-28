@@ -1,4 +1,23 @@
-Inactive</br>
-<%= fact.get('title') %></br></br>
-<div id = "comments_number" /></br>
-<div id = "votes_number" /></br>
+<div class = "inactive thumbnail container">	
+	<div class = "inactive thumbnail">
+		<% if (fact.get('image')) { %>
+			<img src = "<%= fact.get('image') %>" width = "50" />
+		<% } else { %>
+			<img src = "assets/fusegap.png" width = "50" />
+		<% } %>
+	</div>
+</div>
+<div class = "inactive title container">
+	<div class = "inactive title">
+		<b><%= fact.get('title').split(' ')[0] %></b><%= " " + fact.get('title').substr(fact.get('title').indexOf(" ") + 1) %>
+	</div>
+</div>
+<div class = "inactive more">
+	more ...
+</div>
+<div class = "inactive comments container">
+	<div id = "comments_number" class = "inactive comments" />
+</div>
+<div class = "inactive votes container">
+	<div id = "votes_number" class = "inactive votes" />
+</div>

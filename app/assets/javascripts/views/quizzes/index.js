@@ -3,7 +3,7 @@ Protogap0.Views.QuizzesIndex = Backbone.View.extend({
 	id: 'quizzes',
 	
 	events: {
-		'click .quizpanel' : 'activateQuiz'
+		'click .quiz' : 'activateQuiz'
 	},
 	
 	initialize: function(options) {
@@ -26,7 +26,8 @@ Protogap0.Views.QuizzesIndex = Backbone.View.extend({
 	appendQuiz: function(quiz) {
 		var view = new Protogap0.Views.QuizzesShow({
 			attr: this.attr,
-			quiz: quiz
+			quiz: quiz,
+			quizzes: this.facts
 		});
 		$('#quizzes').append(view.render().el);
 		this.renderInactive($('#quizzes').find('#' + quiz.get('id')));
@@ -37,8 +38,8 @@ Protogap0.Views.QuizzesIndex = Backbone.View.extend({
 		var tasks = this.attr.tasks;
 		var user_id = this.attr.current_user.get('id');
 		
-		element = $(event.target).closest('.quizpanel');
-		elements = $('.quizpanel').get();
+		element = $(event.target).closest('.quiz');
+		elements = $('.quiz').get();
 		
 		for (i = 0; i < elements.length; i++) {
 			if ($(elements[i]).hasClass('active')) {
@@ -57,6 +58,8 @@ Protogap0.Views.QuizzesIndex = Backbone.View.extend({
 		
 		$(element).children().remove();
 		$(element).addClass('active');
+		$(element).prev().addClass('above');
+		$(element).next().addClass('below');
 		$(element).html(view.render().el);
 	},
 		

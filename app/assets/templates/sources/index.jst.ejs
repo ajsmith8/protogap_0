@@ -1,3 +1,6 @@
 <% for (i = 0; i < sources.length; i++) { %>
-	Source: <a href = "<%= sources[i].get('url') %>" target = "_blank"><%= sources[i].get('url') %></a></br>
+	<div class = "source container">
+		<span class = "source label">Source: </span> 
+		<a href = "<%= sources[i].get('url') %>" target = "_blank"><%= sources[i].get('url') %></a></br>
+	</div>
 <% } %>

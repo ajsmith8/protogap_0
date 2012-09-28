@@ -1,0 +1,25 @@
+.source {
+	
+	&.container {
+		height: 27px;
+		overflow: hidden;
+		font-size: 11px;
+	}
+	
+	&.label {
+		font-weight: bold;
+		color: #999999;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: #57BBD6;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+	&:visited {
+		color: mix(#57BBD6, #333333, 60%);
+	}
+}

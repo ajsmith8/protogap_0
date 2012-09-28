@@ -1,0 +1,167 @@
+.fact {
+	.active {
+	
+		&.title {
+			width: 100%;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 18px;
+			
+			&.container {
+				margin: 30px 0 0 15%;
+				width: 70%;
+				min-height: 59px;
+			}
+		}
+		
+		&.description {
+			width: 100%;
+			margin: 10px 15px 15px 15px;
+			font-size: 13px;
+			line-height: 18px;
+		}
+		
+		&.sources {
+			width: 95%;
+			margin: 0 15px 5px 15px;
+		}
+		
+		&.thumbnail {
+			position: absolute;
+			top: 20px;
+			left: 12px;
+		
+			&.container {
+				margin: -20px 0 0 -12px;
+				float: left;
+				width: 14%;
+				height: 90px;
+				border-right: 1px solid #f2f2f2;
+				border-bottom: 1px solid #f2f2f2;	
+			}
+		}
+		
+		&.footer {
+			position: relative;
+			height: 45px;
+			bottom: 0;
+			width: 100%;
+			border-top: 1px solid #D6D6D6;
+			background: #F0F0F0;
+			@include border-bottom-radius(4px);
+		}
+		
+		&.edits {
+			
+			&.container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 25%;
+				height: 45px;
+			}
+		}
+		
+		&.votes {
+			&.container {
+				position: absolute;
+				top: 0;
+				left: 25%;
+				width: 50%;
+				height: 45px;
+			}
+		}
+		
+		&.comments {
+			&.container {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 25%;
+				height: 45px;
+			}
+		}
+	}
+
+	.inactive {
+	
+		&.title {
+			height: 20px;
+			width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			font-size: 14px;
+		
+			&.container {
+				position: absolute;
+				top: 35px;
+				left: 15%;
+				width: 70%;	
+			}
+		}
+	
+		&.thumbnail {
+			position: absolute;
+			top: 20px;
+			left: 12px;
+		
+			&.container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 14%;
+				height: 100%;
+				border-right: 1px solid #f2f2f2;	
+			}
+		}
+	
+		&.votes {
+			position: absolute;
+			top: 10px;
+			right: 18px;
+			color: #999999;
+			font-size: 11px;
+		
+			&.container {
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 50%;
+				width: 15%;
+			}
+		}
+	
+		&.comments {
+			position: absolute;
+			bottom: 10px;
+			right: 15px;
+			color: #81B5C4;
+			font-size: 11px;
+			font-weight: bold;
+		
+			&.container {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				height: 50%;
+				width: 15%;
+			}
+		}
+	
+		&.more {
+			position: absolute;
+			bottom: 10px;
+			left: 45%;
+			width: 50px;
+			text-align: center;
+			font-size: 11px;
+			color: #BDBDBD;
+		}
+	}
+}
+
+.factcount {
+	color: rgba(#007ccf, 0.6);
+	font-weight: bold;
+}
