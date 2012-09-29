@@ -38,6 +38,7 @@ Protogap0.Views.QuizzesIndex = Backbone.View.extend({
 		var tasks = this.attr.tasks;
 		var user_id = this.attr.current_user.get('id');
 		
+		$('#quizzes').children().removeClass('above below');
 		element = $(event.target).closest('.quiz');
 		elements = $('.quiz').get();
 		

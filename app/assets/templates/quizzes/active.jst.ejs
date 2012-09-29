@@ -1,2 +1,16 @@
-<%= quiz.get('question') %>
+<div class = "active thumbnail container">	
+	<div class = "active thumbnail">
+		<% if (quiz.get('image')) { %>
+			<img src = "<%= quiz.get('image') %>" width = "50" />
+		<% } else { %>
+			<img src = "assets/fusegap.png" width = "50" />
+		<% } %>
+	</div>
+</div>
+<div class = "active line" />
+<div class = "active question container">
+	<div class = "active question">
+		<%= quiz.get('question') %>
+	</div>
+</div>
 <div id = "answers" />

@@ -23,11 +23,14 @@ Protogap0.Views.PagesHome = Backbone.View.extend({
 	},
 	
 	slider: function() {
+		var self = this;
+		$('#slider').cycle('stop');
+		$('#nav').children().remove();
 		$('#slider').cycle({
 			fx: 'scrollLeft',
 			pager: '#nav',
 			easeIn: 'easeInExpo',
-			easeOut: 'easeInExpo'
+			easeOut: 'easeInExpo',
 		});
 	},
 	

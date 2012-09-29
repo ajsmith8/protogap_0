@@ -52,12 +52,6 @@
   border-bottom-left-radius: $radius;                                                                                                              
 }
 
-@mixin box-shadow($h, $v, $radius, $spread, $color) {
-  -webkit-box-shadow: $h $v $radius $spread $color;
-  -moz-box-shadow: $h $v $radius $spread $color;
-  box-shadow: $h $v $radius $spread $color;
-}
-
 @mixin text-shadow($h, $v, $radius, $color) {
   text-shadow: $h $v $radius $color;
   filter: dropshadow(color=$color, offx=$h, offy=$v);

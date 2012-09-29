@@ -2,16 +2,69 @@
 	.active {
 	
 		&.question {
-			width: 100%;
+			position: relative;
 			font-weight: bold;
 			font-size: 14px;
 			line-height: 18px;
+			display: table-cell; 
+		  	vertical-align: middle; 
+		  	text-align: left;
 			
 			&.container {
-				margin: 30px 0 0 15%;
+				margin: 0 0 0 85px;
 				width: 70%;
-				min-height: 59px;
+				height: 90px;
+				display: table;
 			}
+		}
+		
+		&.thumbnail {
+			position: absolute;
+			top: 20px;
+			left: 12px;
+		
+			&.container {
+				margin: -20px 0 0 -12px;
+				float: left;
+				width: 14%;
+				height: 90px;
+				border-right: 1px solid #f2f2f2;	
+			}
+		}
+		
+		&.sources {
+			width: 95%;
+			margin: 0 15px 5px 15px;
+		}
+		
+		&.answer {
+			width: 50%;
+			padding: 7px;
+			background: darken(#7ECBE0, 25%);
+			color: #fff;
+			margin: 5px 0 5px 25%;
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 15px;
+			@include single-box-shadow(rgba(#000, 0.5), 0, 0, 2px, 2px, true);
+			@include border-radius(5px);
+			@include gradient(darken(#7ECBE0, 25%));
+			
+			&:hover {
+				cursor: pointer;
+				background: darken(#7ECBE0, 15%);
+				@include gradient(darken(#7ECBE0, 15%));
+			}
+		}	
+			
+		&.answers-container {
+			width: 100%;
+			margin: 0 auto;
+			padding: 20px 0 20px 0;
+			background: #F0F0F0;
+			text-align: center;
+			border-top: 1px solid #d6d6d6;
+			@include border-bottom-radius(4px);
 		}
 	}
 

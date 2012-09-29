@@ -1,5 +1,7 @@
-<% for (i = 0; i < answers.length; i++) { %>
-	<div id = "<%= answers[i] %>" class = "answer">
-		<%= answers[i] %>
-	</div></br>
-<% } %>
+<div class = "active answers-container">
+	<% for (i = 0; i < answers.length; i++) { %>
+		<div id = "<%= answers[i] %>" class = "active answer">
+			<%= answers[i] %>
+		</div>
+	<% } %>
+</div>
